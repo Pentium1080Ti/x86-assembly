@@ -18,13 +18,11 @@
 
 Some examples of the programs are:
 
-    Types    |   Programs
------------- | -------------
-Basics | [counting](src/basics/count.asm) [hello world](src/basics/helloworld.asm) [subroutines](src/basics/helloworld-len-subrountines.asm) [input](src/basics/input.asm) [more](src/basics/)
-Maths | [addition](src/maths/addition.asm) [subtraction](src/maths/subtraction.asm) [multiplication](src/maths/multiplication.asm) [division](src/maths/division.asm)
-System | [execute](src/system/execute.asm) [file-read-write](src/system/file-r-w-close.asm) [fork](src/system/fork.asm) [fork-bomb](src/system/fork-bomb.asm) [time](src/system/time.asm)
-Network | [sockets](src/network/socket.asm) [http-request](src/network/http.asm)
-Misc | [fizzbuzz](src/misc/fizzbuzz.asm) [namespaces](src/misc/namespace.asm) [hex-reversal](src/misc/reverse.c)
+- Basics - [counting](src/basics/count.asm), [hello world](src/basics/helloworld.asm), [subroutines](src/basics/helloworld-len-subrountines.asm), [input](src/basics/input.asm), [more](src/basics/)
+- Maths - [addition](src/maths/addition.asm), [subtraction](src/maths/subtraction.asm), [multiplication](src/maths/multiplication.asm), [division](src/maths/division.asm)
+- System - [execute](src/system/execute.asm), [file-read-write](src/system/file-r-w-close.asm), [fork](src/system/fork.asm), [fork-bomb](src/system/fork-bomb.asm), [time](src/system/time.asm)
+- Network - [sockets](src/network/socket.asm), [http-request](src/network/http.asm)
+- Misc - [fizzbuzz](src/misc/fizzbuzz.asm), [namespaces](src/misc/namespace.asm), [hex-reversal](src/misc/reverse.c)
 
 
 ## Building
