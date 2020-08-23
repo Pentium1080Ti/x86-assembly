@@ -4,9 +4,9 @@ LDFLAGS = -m elf_i386
 
 BASICS = count.asm count-ascii.asm helloworld.asm helloworld-args.asm helloworld-inc.asm helloworld-len.asm helloworld-len-subroutines.asm helloworld-lf.asm input.asm
 MATHS = addition.asm division.asm multiplication.asm subtraction.asm
-MISC = fizzbuzz.asm namespace.asm
+MISC = fizzbuzz.asm namespace.asm reverse.c
 SYSTEM = execute.asm file-delete.asm file-r-w-close.asm file-read.asm file-seek.asm file-write.asm fork.asm fork-bomb.asm time.asm
-NETWORK = http.asm socket.asm reverse.c
+NETWORK = http.asm socket.asm
 
 ALL = $(BASICS) $(MATHS) $(MISC) $(SYSTEM) $(NETWORK)
 
@@ -28,8 +28,8 @@ $(MATHS): %.asm:
 	@ld $(LDFLAGS) out/$*.o -o out/$*
 	@rm out/$*.o
 
-$(MISC): %.asm:
-	@$(CC) $(NASMFLAGS) src/misc/$@ -o out/$*.o
+$(NETWORK): %.asm:
+	@$(CC) $(NASMFLAGS) src/network/$@ -o out/$*.o
 	@ld $(LDFLAGS) out/$*.o -o out/$*
 	@rm out/$*.o
 
@@ -38,9 +38,9 @@ $(SYSTEM): %.asm:
 	@ld $(LDFLAGS) out/$*.o -o out/$*
 	@rm out/$*.o
 
-$(filter %.asm,$(NETWORK)): %.asm:
-	@$(CC) $(NASMFLAGS) src/network/$@ -o out/$*.o
+$(filter %.asm,$(MISC)): %.asm:
+	@$(CC) $(NASMFLAGS) src/misc/$@ -o out/$*.o
 	@ld $(LDFLAGS) out/$*.o -o out/$*
 	@rm out/$*.o
-$(filter %.c,$(NETWORK)): %.c:
-	@gcc src/network/$@ -o out/$*
+$(filter %.c,$(MISC)): %.c:
+	@gcc src/misc/$@ -o out/$*
